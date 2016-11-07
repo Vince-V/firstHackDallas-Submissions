@@ -1,0 +1,120 @@
+.closureCodeContainer {
+	color:#ffffff;
+	background-color: #222222;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 2px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size:.8em;
+	text-align: left;
+	margin-top: 50px;
+	height: 365px;
+}
+
+select {
+	font-size: 10px;
+}
+
+.codeOption {
+	margin-left: 30px;
+}
+
+.addClosureCodes {
+	float: left;
+	width: 48%; 
+	border-right: 1px solid #494949;
+  	padding-right: 44px;
+  	display: inline-block;
+  	padding: 16px;
+}
+
+.removeClosureCodes {
+	float: right;
+	width: 45%; 
+  	margin-right: 24px;
+  	display: inline-block;
+  	padding: 16px;
+}
+
+.removeClosureCodes select {
+	width: 55%;
+}
+
+.closureInput {
+	padding: 10px;
+	height: 30px;
+	margin-bottom: 7px;
+	/*width: 30%;*/
+	background-color: #494949;
+	border: none;
+	color: #B5B5B5;
+}
+
+.closureSelect {
+	height: 30px;
+	margin-bottom: 7px;
+	/*width: 30%;*/
+	font-size: 13px;
+	background-color: #494949;
+	border: none;
+	color: #B5B5B5;
+}
+
+.addCategoryContainer {
+	margin-bottom: 10px;
+	padding-top: 10px;
+}
+
+.closureOptions {
+	display: inline-block;
+	margin: 10px;
+}
+
+.closureOptions:hover {
+	cursor: pointer;
+	color: #CC0000;
+}
+
+input:focus {
+  box-shadow: 1px 1px 1px #3D3D3D;
+}
+
+.inputContainer {
+	text-align: left;
+	margin-left: 30px;
+	padding: 8px;
+}
+
+.submitClosureCodes {
+	background-color: #CC0000;
+	text-align: right;
+}
+
+.submitCodesBtn {
+	background-color: #CC0000;
+	font-weight: normal;
+	height: 50px;
+	margin: 0;
+	width: 120px;
+	margin-right: 37%;
+}
+
+.removeCodesBtn {
+	background-color: #CC0000;
+	font-weight: normal;
+	height: 50px;
+	width: 120px;
+	margin: 0;
+}
+
+.catLabel {
+	margin-right: 10px;
+	min-width: 110px;
+	display: inline-block;
+	cursor: default;
+}
+
+.highlight {
+	color: #CC0000;
+}

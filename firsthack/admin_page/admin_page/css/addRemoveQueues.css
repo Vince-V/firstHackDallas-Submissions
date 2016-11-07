@@ -1,0 +1,60 @@
+.queuesContainer {
+	margin-top: 150px;
+  	/*font-size: 12px;*/
+  	text-align: center;
+  	padding: 16px;
+  	background-color: #222222;
+  	color: white;
+  	height: 250px;
+}
+
+.smallLbl {
+	float: left;
+	margin-right: 10px;
+}
+
+.addContainer {
+	float: left;
+	text-align: left;
+	color:#ffffff;
+	background-color: #222222;
+	padding: 16px;
+	border-right: 1px solid #494949;
+	padding-right: 84px;
+	padding-left: 70px;
+	font-size: 12px;
+	margin-left: 3px;
+	display: inline-block;
+}
+
+.queueAdd {
+	margin: 4px;
+	text-align: right;
+}
+
+.removeContainer {
+	float: right;
+	text-align: left;
+	color:#ffffff;
+	background-color: #222222;
+	padding: 16px;
+	font-size: 12px;
+	padding-right: 50px;
+}
+
+.lbl {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+#statusQueues, #newStatusQueue,
+#rerouteQueues, #newRerouteQueue,
+#newRerouteMap {
+	width: 150px;
+  	height: 30px;
+  	border: 1px solid #494949;
+  	padding: 4px;
+  	margin-right: 8px;
+  	background-color: #494949;
+  	color: #B5B5B5;
+}

@@ -1,0 +1,772 @@
+#banner { 
+  font-size:15px;
+  text-align: center;
+  /*font-weight: bold;*/
+  font-family: arial;
+  position: relative;
+  background-color: white;
+  padding-top: 0px;
+  padding-bottom: 9px;
+}
+
+#navi {
+  height: 60px;
+  padding-left: 3%;
+  width: 80%;
+  text-align: left;
+  color: black;
+  border-bottom: 1px solid gainsboro;
+  margin-bottom: 10px;
+  margin: 0px auto;
+  min-width: 900px;
+} 
+
+#updated_ticket_notice {
+  margin: 0px auto;
+  max-width: 300px;
+}
+
+#updated_text {
+    background: white;
+    position: relative;
+    color:white;
+    /* Chrome, Safari, Opera */
+    -webkit-animation-name: myfirst;
+    -webkit-animation-duration: 72s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 2s;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-play-state: running;
+    /* Standard syntax */
+    animation-name: myfirst;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst {
+    0%   {
+      background:white; 
+      border:1px solid black; 
+      left:0px; 
+      top:0px;
+      display: inline; 
+    }
+    5% {
+      background:white; 
+      border:1px solid black; 
+      down:10px; 
+      top:0px;
+      display: inline;
+    }
+    25%  {
+      background:white; 
+      border:1px solid black; 
+      down:10px; 
+      top:0px;
+    }
+    50%  {
+      background:#B00000; 
+      color:white;
+      border:1px solid black; 
+      down:10px; 
+      top:50px;
+    }
+    75%  {
+      background:#B00000;
+      color:white;
+      border:1px solid black; 
+      down:0px; 
+      top:50px;
+    }
+    100% {
+      display: none; 
+      background:white; 
+      color: white; 
+      down:0px; 
+      top:0px;
+    }
+}
+
+
+/* Standard syntax */
+@keyframes myfirst {
+    0%   {
+      background:white; 
+      border:1px solid black; 
+      left:0px; 
+      top:0px;
+      display: inline; 
+    }
+    25%  {
+      background:white; 
+      border:1px solid black; 
+      down:10px; 
+      top:0px;
+      display: inline;
+    }
+    50%  {
+      background:#B00000;
+      color:white; 
+      border:1px solid black; 
+      down:10px; 
+      top:50px;
+    }
+    75%  {
+      background:#B00000;
+      color:white;
+      border:1px solid black; 
+      down:0px; 
+      top:50px;
+    }
+    100% {
+      display: none; 
+      background:white; 
+      color: white;
+      down:0px; 
+      top:0px;    
+    }
+}
+
+#logintable {
+  width: 100%;
+  max-width: 800px;
+}
+
+#login_table {
+  width: 100%;
+  max-width: 800px;
+}
+
+#filterTable {
+  margin: 0px auto;
+  text-align: left;
+}
+
+#tbl_navi {
+  width: 100%;
+  height: 100%;
+  margin: 0px auto;
+  text-align: left;
+}
+
+#tbl_navi td {
+  border: none;
+  color: black;
+  text-align: left;
+}
+
+#MainBody {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  font-family: arial;
+  text-align: center;
+  border: none;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 900px;
+  background-color: white;
+}
+
+#ticket_id a {
+  color: black;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+}
+
+a {
+  color: black;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  /*margin-left: 17px;*/
+}
+
+#MainBody_Report {
+  padding: 5px;
+  font-family: arial;
+  text-align: center;
+  border: none;
+  margin: 0 auto;
+  height: 1000px;
+  width: 65%;
+}
+
+/*#MainBody_Report csv_img {
+  text-align: right;
+}*/
+
+#ReportBlock {
+  border-radius: 0px; 
+  padding: 7px;
+  margin-left: 0 auto;
+  margin-right: 0 auto;
+  border-radius: 0px;
+  height: 30%;
+  width: 50%;
+  text-align: center;
+  font-family: arial;
+}
+
+#userReportBlock {
+  padding: 7px;
+  text-align: center;
+}
+
+body {
+  line-height: 1.42857143;
+  color: black;
+  margin: 0 auto;
+}
+
+#viewuserreportbox {
+  margin-left: 40%;
+  padding-top: 1px;
+  width: 50%;
+  border-radius: 5px;
+  box-shadow: 10px 0px 15px #CCC;
+  border-left: solid 1px gainsboro;
+}
+
+#addreportbox {
+  padding-top: 1px;
+  margin-left: 20px;
+  width: 90%;
+  border-radius: 5px;
+  box-shadow: 10px 10px 15px #CCC;
+  border-left: solid 1px gainsboro;
+}
+
+th {
+  border-bottom: 1px gainsboro solid;
+  padding: 0.4em;
+  cursor: pointer;
+}
+
+#reportTable tr {
+  border: solid 1px gainsboro;
+}
+
+#logoutfooter {
+  font-family: arial;
+  text-align: center;
+  background-color: #C9C9C9;
+  padding: 40px;
+  font-weight: 400;
+  font-size: 25px;
+}
+
+#pageFooter {
+  font-family: arial;
+  color: grey;
+  /*padding-left: 42%;*/
+  font-size: 11px;
+  text-align: left;
+  padding-top: 65px;
+  margin: 0px auto;
+}
+
+#pageFooter a {
+  color: grey;
+  cursor: default;
+}
+
+#reportTable caption {
+  margin-left: auto;
+  margin-right: auto;
+}
+#reportTable tr:hover{
+  background-color: #C00000;
+  color: white;
+  cursor: pointer;
+}
+
+#reportTable th, #updateStatementTable th {
+  background: gainsboro; 
+  text-align: center;
+  cursor: default;
+  color: black;
+}
+
+#tbl_categories {
+  text-align: left;
+  margin: 0px auto;
+  height: 100%;
+  font-weight: bold;
+}
+
+#usersCats, #allCats {
+  height: 100%;
+}
+
+#ticketTable, #userTable,
+#weeklyReportTable,
+#ticketInfoTable,
+#tbl_addUser {
+  background: white;
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px gainsboro solid;
+  max-height: 700px;
+  overflow: auto;
+  font-size: 11px;
+  margin: 0px auto;
+  text-align: center;
+  margin-bottom: 150px;
+}
+
+#ticketTable {
+  margin-top: 8px;
+}
+
+#tbl_settings {
+  background: white;
+  border-collapse: collapse;
+  width: 90%;
+  padding-left: 4px;
+  overflow: auto;
+  font-size: 12px;
+  margin: 0px auto;
+  text-align: center;
+}
+
+#ticketTable_div {
+  max-height: 850px;
+  overflow: auto;
+}
+
+#tbl_addUser {
+  border: none;
+  /*vertical-align: top;*/
+  font-size: 14px;
+  min-width: 120px;
+}
+
+#ticketTable th:hover {
+  cursor: default;
+}
+
+#ticketTable tr:hover,
+#taTable tr:hover, #assignmentTable tr:hover,
+#weeklyReportTable tr:hover, #dailyInfoTable tr:hover,
+#ticketInfoTable tr:hover, #tbl_ftpCSV tr:hover {
+  background-color: #C00000;
+  color: white;
+  cursor: pointer;
+}
+
+#userTable tr:hover {
+  background-color: #C00000;
+  color: white;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+#tbl_addUser tr {
+  border: none;
+}
+
+#ticketTable td {
+  border: 1px solid gainsboro;
+  width: 12%;
+  font-size: 11px;
+}
+
+th {
+  border-bottom: 1px gainsboro solid;
+  padding: 0.4em;
+  background: gainsboro;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+  width: 100px;
+  min-width: 12%;
+  border-left: 1px solid white;
+}
+
+#tbl_settings td {
+  padding: 3px;
+}
+
+#ticketTabel td, #userTable td, #taTable td,
+#assignmentTable td, #ticketInfoTable td,
+#tbl_ftpCSV td {
+  padding: 3px;
+  border: 1px gainsboro solid; 
+  min-width: 100px;
+}
+
+#addReportBox {
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#reportTable tr:hover{
+  background-color: #C00000;
+}
+
+#userInfo {
+  width: 40%;
+  height: 40%;
+  font-family: arial;
+  color: black;
+}
+
+#btn_home {
+  max-width: 40px;
+}
+
+button, #btn_submitReport, #btn_login,
+#btnLogout, #btn_viewTicket, #btn_viewUsers, 
+#btn_ftpCSV, #btn_updateUser {
+  background-color: #CC0000;
+  width: 85px;
+  height: 40px;
+  color: white;
+  font-weight: bolder;
+  border: none;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+#btn_submitCsv {
+  width: 130px;
+}
+
+#btn_updateTicket {
+  min-width: 20%;
+}
+
+#btn_login {
+  width: 50%;
+}
+
+#btn_LineGraph {
+  width: 160px;
+}
+
+#btnLogout {
+  background-color: #088989;
+  width: 170px;
+  height: 40px;
+  color: white;
+  font-weight: bolder;
+  margin-left: 10px;
+  border: none;
+}
+
+button:hover, #btn_submitReport:hover,
+#btnLogout:hover, #btn_submitCsv:hover,
+#btn_viewTicket:hover, #btn_viewUsers:hover, #btn_ftpCSV:hover,
+#btn_login:hover {
+  background-color: #990000;
+  cursor: pointer;
+}
+
+button.down {
+  background-color: #1B7070;
+}
+option {
+    font-size:15px;
+}
+
+.style1 {
+  width: 50px;
+  position: relative;
+  margin-left: 0 auto;
+  padding: 3px;
+  padding-bottom: 60px;
+}
+
+.style2 {
+    width: 50px;
+    padding: 1px;
+}
+
+tr {
+  padding: .5px;
+}
+
+hr {
+  width:100%; 
+  height:1px;
+  float:left; 
+  border:none; 
+  background-color:#0080FF;
+}
+
+#choice {
+  display: inline;
+  color: #06C;
+  font-size: 11px;
+}
+
+#nav_tab {
+  text-transform: uppercase;
+  font-family: arial;
+  font-weight: normal;
+  font-size: 16px;
+  margin: 0px 12px;
+  padding: 0px;
+  color: black;
+  background-color: white;
+  text-decoration: none;
+}
+
+
+#username, #password {
+  height: 30px;
+  width: 100%;
+  max-width: 325px;
+  margin-bottom: 3px;
+}
+
+#div_addUser {
+  text-align: center; 
+  padding: 10px; 
+  width: 70%; 
+  margin: 0px auto;
+}
+
+#uname, #pwd, #vzid, #firstname,
+#lastname, #numTickets, #bestCat,
+#usergroup, #ticket_id, #application,
+#date_opened, #last_updated {
+  height: 30px;
+  width: 325px;
+  padding: 3px;
+  margin-bottom: 4px;
+}
+
+#closure_cat, #closure_issue, 
+#closure_ordering, #closure_prov, 
+#closure_billing, #closure_tracking,
+#ticket_status {
+  height: 30px;
+  width:  100%;
+  padding: 3px;
+  margin-bottom: 4px;
+}
+
+ #vzLogo {
+    text-decoration: none;
+    color: black;
+    font-family: arial;
+    font-size: 20px;
+ }
+
+#all_tickets, #add_user, 
+#all_users, #pending_tkts {
+  text-decoration: none;
+  color: black;
+  font-family: arial;
+  font-size: 15px;
+  margin-left: 17px;
+}
+
+#easteregg {
+  margin-left: 0px;
+  font-size: 11px;
+}
+
+#all_tickets:hover, #add_user:hover,
+#pending_tkts:hover, #all_users:hover {
+  color: #B00000;
+  border-bottom: 2px solid #B00000;
+}
+
+#div_comment, #txtarea_comment {
+  min-width: 623px;
+  max-height: 450px;
+  min-height: 250px;
+  overflow: auto;
+  border: 1px solid gainsboro;
+  padding: 3px;
+  font-size: 14px;
+}
+
+select {
+  font-size: 11px;
+}
+
+#login {
+  height: 30px;
+  width: 102%;
+}
+
+#add_comment, #txtarea_comment, #div_comment {
+  min-width: 687px;
+  height: 120px;
+  padding: 3px;
+}
+
+#logindiv {
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 20%;
+  text-align: left;
+  font-family: arial;
+}
+
+#user, #actiontaken, #identifier, 
+#count, #catagories, #selCatagories {
+  width: 95%;
+  margin-bottom: 7px;
+}
+
+#tableDiv {
+  margin: 0px auto;
+  overflow: auto;
+  max-height: 560px;
+  width: 85%;
+  min-width: 85%;
+  margin-top: 20px;
+}
+
+#tbl_ticketInfo {
+  background-color: gainsboro;
+  margin: 0px auto;
+  overflow: auto;
+  max-height: 560px;
+  width: 100%;
+  /*min-width: 100%;*/
+  max-width: 802px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 16px;
+  margin-bottom: 33px;
+}
+
+#tbl_ticketInfo td {
+  font-size: 16px;
+  width: 10%;
+  min-width: 186px;
+}
+
+#tbl_tktComment, #tbl_closureInfo2,
+#tbl_closureInfo1 {
+  margin: 0px auto;
+  overflow: auto;
+  max-height: 560px;
+  width: 100%;
+  max-width: 800px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 12px;
+}
+
+#tbl_closureInfo1 tr, #tbl_closureInfo2 tr, #tbl_tktComment tr {
+  vertical-align: top;
+}
+
+#tbl_closureInfo2 td {
+  padding: 3px;
+  width: 15%;
+  border: medium none;
+  vertical-align: top;
+  font-size: 12px;
+}
+
+#tbl_closureInfo1 td {
+  padding: 3px;
+  border: none;
+  vertical-align: top;
+  font-size: 12px;
+}
+
+#tbl_tktComment td {
+  padding: 3px;
+  width: 15%;
+  border: none;
+  vertical-align: top;
+  font-size: 12px;
+}
+
+
+
+* {
+  box-sizing: border-box; 
+}
+
+.actions a {
+  display: block;
+  margin: 25px auto 0;
+  width: 200px;
+  text-align: center;
+  background: #b31d14;
+  color: #c8c8c8;
+  padding: 6px;
+  border-radius: 3px;
+  text-decoration: none; 
+}
+
+/*.filters {
+  margin-bottom: 20px; 
+}
+
+.filter {
+  width: 120px;
+}*/
+
+fieldset {
+    display: block;
+    border: 2px gainsboro (internal value);
+} 
+
+/*.filter-container {
+  float: left;
+  width: 40%;
+  padding-right: 10px; 
+}
+.filter-container:last-of-type {
+    padding-right: 0; 
+}
+.filter-container input {
+  -webkit-appearance: none;
+  /*border: 1px solid black;*/
+ /* background: white;
+  font-size: 18px;
+  width: 100%; 
+}*/
+/*.filter-container input:focus {
+  outline: none; 
+}*/*/
+
+.clearfix {
+  clear: both;
+  width: 100%; 
+}
+
+
+#user_list_div {
+  text-align: left;
+  font-family: arial;
+}
+
+#user_list_div a:hover {
+  color: red;
+  cursor: pointer;
+}
+
+#user_graph_table td {
+  border: none;
+}
+
+#loadingGif {
+  margin: 0px auto;
+  padding-top: 230px;
+}
+
+#table_summary td {
+  border: none;
+  text-align: left;
+  padding: 0px;
+}

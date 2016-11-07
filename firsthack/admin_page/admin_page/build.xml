@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AdminPage build script -->
+<project name="AdminPage" default="all" basedir=".">
+	
+	<property file="${basedir}/../../../build.properties"/>
+	<property name="dist.dir" value="${DIST_DIR}/dsdist/AdminPage"/>
+	<property name="lib.dir" value="/data/binary/ssp/lib"/>
+	<property name="ds.home" value="${ssp.home}/DataServices"/>
+	<property name="bs.home" value="${ssp.home}/BusinessServices"/>
+	<property name="ds.dir" value="${basedir}/../" />	
+	<property name="wl103.lib.dir" value="/apps/opt/weblogic/weblogic103mp1/server/lib"/>
+	<property name="wl103.modules.dir" value="/apps/opt/bea/bea103mp1/modules"/>
+	<property name="sspos.dist.lib" value="${DIST_DIR}/bsdist/lib"/>
+	<property name="sspos.dist.lib.cog" value="${DIST_DIR}/bsdist/lib/cog"/>
+	<property name="jersery.lib" value="/data/binary/ssp/lib"/>
+	<property name="jackson.lib" value="/data/binary/ssp/lib"/>
+        <property name="common.dist.dir" value="${DIST_DIR}/dsdist"/>      
+		<property name="ld.classes.dir" value="${BUILD_DIR}/ds/dataaccess/AdminPage"/>
+        <property name="ld.war.dir" value="${DIST_DIR}/dsdist/AdminPage"/>
+		<property name="war-ui-src" value="${DIST_DIR}/dsdist/AdminPage/uisrc"/>
+	<path id="classpath_id">
+		<fileset dir="${lib.dir}">
+			<include name="asm-3.1.jar"/>
+			<include name="jaxp.jar"/>
+			<include name="jaxrpc.jar"/>
+			<include name="jettison-1.1.jar"/>
+			<include name="jsr311-api-1.1.1.jar"/>
+			<include name="axis.jar"/>
+			<include name="commons-discovery.jar"/>
+			<include name="commons-logging.jar"/>
+			<include name="wsdl4j-1.5.1.jar"/>
+			<include name="*.jar"/>
+		</fileset>
+		<fileset dir="${common.dist.dir}">
+			<include name="*.jar"/>
+		</fileset>
+		<fileset dir="${wl103.lib.dir}">
+			<include name="weblogic.jar"/>
+			<include name="webservices.jar"/>
+			<include name="webserviceclient.jar"/>
+		</fileset>
+		<fileset dir="${wl103.modules.dir}">
+			<include name="javax.servlet_1.0.0.0_2-5.jar"/>
+		</fileset>	
+		<fileset dir="${jersery.lib}">
+			<include name="jersey*.jar"/>
+		</fileset>
+		<fileset dir="${jackson.lib}">
+			<include name="jackson*.jar"/>
+		</fileset>
+		<fileset dir="${sspos.dist.lib.cog}">
+			<include name="BizServicesCommon.jar"/>
+			<include name="BizServicesUtil.jar"/>
+			<include name="ServicesCommon.jar"/>
+		</fileset>
+	</path>
+
+	<target name="banner">
+		<echo message="=========================================================="/>
+		<echo message="     AdminPage Build Script                            "/>
+		<echo message="=========================================================="/>
+		<echo message="Use 'ant SendMail' to rebuild changed file and create WAR"/>
+		<echo message="Use 'ant clean' to clean intermediate files "/>
+		<echo message="=========================================================="/>
+		<echo message="Use 'rest-updateservice' to rebuild UpdateService-REST.ear files "/>
+		<echo message="=========================================================="/>
+	</target>
+
+	<target name="init" depends="banner">
+		<echo message="========================================="/>
+		<echo message="			 Preparing ${ant.project.name}  	         "/>
+		<echo message="========================================="/>
+		<tstamp/>
+		<echo message="========================================="/>
+		<echo message="  Deleting ld/classes dir"/>
+		<delete dir="${ld.classes.dir}"/>
+		<delete dir="${ld.war.dir}"/>
+		<echo message="========================================="/>
+		<mkdir dir="${ld.classes.dir}"/>
+		<mkdir dir="${ld.war.dir}"/>
+		<mkdir dir="${dist.dir}"/>
+		<mkdir dir="${war-ui-src}"/>
+		<mkdir dir="${sspos.dist.lib.cog}"/>
+		<property name="classpath" refId="classpath_id"/>
+		<echo message="Using Classpath: ${classpath}"/>
+	</target>
+	<target name="clean" >
+		<echo message="========================================="/>
+		<echo message=" 		Cleaning ${ant.project.name}      	  	 "/>
+		<echo message="========================================="/>
+		<delete dir="${dist.dir}"/>
+	</target>
+	<target name="compile" depends="init">
+		<echo message="========================================="/>
+		<echo message=" 		Cleaning ${ant.project.name}      	  	 "/>
+		<echo message="========================================="/>	
+		<javac srcdir="${basedir}/src"  destdir="${ld.classes.dir}" optimize="on" classpath="${classpath}" debug="on" failonerror="true" source="1.6" 
+       target="1.6">			
+		</javac> 
+	</target>
+	
+	<target name="war" depends="compile">
+
+		<echo message="========================================="/>
+		<echo message=" 	Building AdminPage WAR file       "/>
+		<echo message="========================================="/>
+
+		<copy todir="${war-ui-src}">
+			<fileset dir="${basedir}">
+				<include name="**/*.html"/>
+			</fileset>
+		</copy>
+		<copy todir="${war-ui-src}">
+			<fileset dir="${basedir}">
+				<include name="**/*.js"/>
+			</fileset>
+		</copy>
+		<copy todir="${war-ui-src}">
+			<fileset dir="${basedir}">
+				<include name="**/*.css"/>
+			</fileset>
+		</copy>
+		<copy todir="${war-ui-src}/pictures/">
+			<fileset dir="${basedir}/pictures/">
+				<include name="**/*.gif"/>
+				<include name="**/*.GIF"/>
+				<include name="**/*.ico"/>
+			</fileset>
+		</copy>
+		<echo message="	War Directory :: ${ld.war.dir} 	        "/>
+		<war warfile="${dist.dir}/AdminPage.war" webxml="${basedir}/config/WEB-INF/web.xml" basedir="${war-ui-src}">
+			<classes dir="${ld.classes.dir}">
+				<include name="com/verizon/ssp/roctool/**/**"/>				 
+			</classes>
+		</war>		
+	</target>
+	<target name="AdminPage" depends="war"/>
+</project>
+

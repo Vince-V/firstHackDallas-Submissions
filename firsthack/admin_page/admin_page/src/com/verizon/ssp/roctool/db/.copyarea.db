@@ -1,0 +1,9 @@
+ClearCase CopyAreaDB|4
+vob\ssp\Services\DataServices\ROCTool\src\com\verizon\ssp\roctool\db
+2
+5
+e:DBQueries.java|1|14c9ec07cbc|564|7079b610|4312fb21d8a411e482b80001838c2019|0
+e:MSSqlConn.java|1|14c2148907e|66e|d50d13e7|c427dac1cba011e48edf0001838c2019|0
+b:DBConn.java|1|14cc2e7c62e|b60|8fb6a316|b46382a7e20111e496a10001838c2019|0
+15:DBQueryConstants.java|1|14bbcd5c4c7|1fbf|2e53e89|e5ea4869b95311e48bc80001838c2019|0
+d:DBDriver.java|1|14ce2f8a5c4|1165d|9994f405|0ef41398e7bc11e491d10001838c2019|0

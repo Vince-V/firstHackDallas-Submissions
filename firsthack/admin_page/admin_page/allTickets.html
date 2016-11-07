@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+        <link rel="shortcut icon" href="../AdminPage/pictures/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="../AdminPage/css/styles.css"/>
+        <link rel="stylesheet" type="text/css" href="../AdminPage/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../AdminPage/css/filter.css" />
+        <script src="../AdminPage/js/google-ajax.js"></script>
+        <title id='pageTitle'>ROC Tool</title>
+        <script src="../AdminPage/js/filter.js"></script>
+        <script src="../AdminPage/js/allTicketsScript.js?n=1"></script>
+        <script src="../AdminPage/js/commons.js"></script>
+        <script src="../AdminPage/js/shiftClick.js"></script>
+        <script src="../AdminPage/js/stickyhead.js"></script>
+    </head>
+    <body>
+        <table id='vzSearch'>
+            <tr>
+                <td><h1 id="title">VERIZON</h1></td>
+                <td></td><td></td><td></td><td id='label'>Ticket ID: </td>
+                <td style='min-width: 140px; max-width: 140px;'>
+                    <input id='search' type='text'></input>&nbsp;<button id='btn_search' onclick='lookInDB()'>Search</button>
+                </td>
+            </tr>
+        </table>
+        <div id="menu">
+            <ul id="menubar">
+                <li><a href='home.html'>Home</a></li>
+                <li id='add_user'>
+                    <a href="#" id="adminList">Admin</a>
+                    <ul id="linklist">
+                        <li><a href="summary.html">View Work Summary</a></li>
+                        <li><a href="viewUsers.html">View All Users</a></li>
+                        <li><a href="adduser.html">Add User</a></li>
+                        <li><a href="addClosureCodes.html">Add Closure Code</a></li>
+                        <li><a href="addRemoveQueues.html">Add/Remove Queues</a></li>
+                    </ul>
+                </li>
+                <li><a href="allTickets.html">View All Tickets</a></li>
+                <li><a href='settings.html'>Settings</a></li>
+                <li id="logout" onclick="signout();"><a>Logout</a></li>
+            </ul>
+        </div>
+        <div id="MainBody">
+            <div id='tktCount'><b>PENDING TICKETS</b></br></div>
+            <div class="filterContainer">
+            </div>
+            <div >
+                <div id="loadingdiv2" >
+                    <div><img  src='../AdminPage/pictures/loading.GIF'></img></div>
+                </div>
+                <div class='helpOption'><div>Filter to View and Assign Tickets</div></div>
+                <!-- <div id="count">Count (0)</div> -->
+                <!-- <div id="ticketTable_div"> -->
+                <table id="ticketTable" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th id='ticket_id'><a href="javascript:SortTable(0,'N');">ROC Ticket ID</a></th>
+                            <th id='assigned_to'><a href="javascript:SortTable(1,'T');">Assigned To</a></th>
+                            <th id='referred_to'><a href="javascript:SortTable(2,'T');">Referred To</a></th>
+                            <th id='ticket_cat'><a href="javascript:SortTable(3,'T');">Ticket Category</a></th>
+                            <th id='ticket_pri'><a href="javascript:SortTable(4,'T');">Ticket Priority</a></th>
+                            <th id='ssp_route_cycles'><a href="javascript:SortTable(5,'N');">SSP Route Cycles</a></th>
+                            <th id='referred_date'><a href="javascript:SortTable(6,'D', 'ymd');">Referred Date</a></th>
+                            <th id='ticket_status'><a href="javascript:SortTable(7,'T');">Status</a></th>
+                            <th id='onsite_referral'><a href="javascript:SortTable(8,'T');">Onsite Referral</a></th>
+                            <th id='referal_cat'><a href="javascript:SortTable(9,'T');">Referral Category</a></th>
+                            <th id='business'><a href="javascript:SortTable(10,'T');">Business</a></th>
+                            <th id='hold_status'><a href="javascript:SortTable(11,'T');">Hold Status</a></th>
+                            <th id='selectBtnHead'><button id='selectTickets' onclick='updateOnClick();'>Select Tickets</button></th>
+                        </tr>
+                    </thead>
+                    <tbody id='tableBody'>
+                    </tbody>
+                </table>
+                <!-- </div> -->
+            </div>
+        </div>
+        <script type="text/javascript">
+            // taken from http://www.willmaster.com/library/features/sorting-a-table-with-javascript.php
+            /* 
+               Willmaster Table Sort
+               Version 1.0
+               July 3, 2011
+
+               Will Bontrager
+               http://www.willmaster.com/
+               Copyright 2011 Will Bontrager Software, LLC
+
+               This software is provided "AS IS," without 
+               any warranty of any kind, without even any 
+               implied warranty such as merchantability 
+               or fitness for a particular purpose.
+               Will Bontrager Software, LLC grants 
+               you a royalty free license to use or 
+               modify this software provided this 
+               notice appears on all copies. 
+            */
+            //
+            // One placed to customize - The id value of the table tag.
+
+            var TableIDvalue = "ticketTable";
+
+            //
+            //////////////////////////////////////
+            var TableLastSortedColumn = -1;
+
+            function SortTable() {
+                switch (arguments[0]) {
+                     case 0:
+                        if ($("#ticket_id").html().indexOf('^') == -1)
+                            $("#ticket_id").html("<a href=\"javascript:SortTable(0,'N');\">ROC Ticket ID ^</a>");
+                        else
+                            $("#ticket_id").html("<a href=\"javascript:SortTable(0,'N');\">ROC Ticket ID v</a>");
+                        break;
+                    case 1:
+                        if ($("#assigned_to").html().indexOf('^') == -1)
+                            $("#assigned_to").html("<a href=\"javascript:SortTable(1,'N');\">Assigned To ^</a>");
+                        else
+                            $("#assigned_to").html("<a href=\"javascript:SortTable(1,'N');\">Assigned To v</a>");
+                        break;
+                    case 2:
+                        if ($("#referred_to").html().indexOf('^') == -1)
+                            $("#referred_to").html("<a href=\"javascript:SortTable(2,'N');\">Referred To ^</a>");
+                        else
+                            $("#referred_to").html("<a href=\"javascript:SortTable(2,'N');\">Referred To v</a>");
+                        break;
+                    case 3:
+                        if ($("#ticket_cat").html().indexOf('^') == -1)
+                            $("#ticket_cat").html("<a href=\"javascript:SortTable(3,'N');\">Ticket Category ^</a>");
+                        else
+                            $("#ticket_cat").html("<a href=\"javascript:SortTable(3,'N');\">Ticket Category v</a>");
+                        break;
+                    case 4:
+                        if ($("#ticket_pri").html().indexOf('^') == -1)
+                            $("#ticket_pri").html("<a href=\"javascript:SortTable(4,'N');\">Ticket Priority ^</a>");
+                        else
+                            $("#ticket_pri").html("<a href=\"javascript:SortTable(4,'N');\">Ticket Priority v</a>");
+                        break;
+                    case 5:
+                        if ($("#ssp_route_cycles").html().indexOf('^') == -1)
+                            $("#ssp_route_cycles").html("<a href=\"javascript:SortTable(5,'N');\">SSP Route Cycles ^</a>");
+                        else
+                            $("#ssp_route_cycles").html("<a href=\"javascript:SortTable(5,'N');\">SSP Route Cycles v</a>");
+                        break;
+                    case 6:
+                        if ($("#referred_date").html().indexOf('^') == -1)
+                            $("#referred_date").html("<a href=\"javascript:SortTable(6,'N');\">Referred Date ^</a>");
+                        else
+                            $("#referred_date").html("<a href=\"javascript:SortTable(6,'N');\">Referred Date v</a>");
+                        break;
+                    case 7:
+                        if ($("#ticket_status").html().indexOf('^') == -1)
+                            $("#ticket_status").html("<a href=\"javascript:SortTable(7,'N');\">Status ^</a>");
+                        else
+                            $("#ticket_status").html("<a href=\"javascript:SortTable(7,'N');\">Status v</a>");
+                        break;
+                    case 8:
+                        if ($("#onsite_referral").html().indexOf('^') == -1)
+                            $("#onsite_referral").html("<a href=\"javascript:SortTable(8,'N');\">Onsite Referral ^</a>");
+                        else
+                            $("#onsite_referral").html("<a href=\"javascript:SortTable(8,'N');\">Onsite Referral v</a>");
+                        break;
+                    case 9:
+                        if ($("#referal_cat").html().indexOf('^') == -1)
+                            $("#referal_cat").html("<a href=\"javascript:SortTable(9,'N');\">Referral Category ^</a>");
+                        else
+                            $("#referal_cat").html("<a href=\"javascript:SortTable(9,'N');\">Referral Category v</a>");
+                        break;
+                    case 10:
+                        if ($("#business").html().indexOf('^') == -1)
+                            $("#business").html("<a href=\"javascript:SortTable(10,'T');\">Business ^</a>");
+                        else
+                            $("#business").html("<a href=\"javascript:SortTable(10,'T');\">Business v</a>");
+                        break;
+                    case 11:
+                        if ($("#hold_status").html().indexOf('^') == -1)
+                            $("#hold_status").html("<a href=\"javascript:SortTable(11,'T');\">Hold Status ^</a>");
+                        else
+                            $("#hold_status").html("<a href=\"javascript:SortTable(11,'T');\">Hold Status v</a>");
+                        break;
+                }
+
+                var sortColumn = parseInt(arguments[0]);
+                var type = arguments.length > 1 ? arguments[1] : 'T';
+                var dateformat = arguments.length > 2 ? arguments[2] : '';
+                var table = document.getElementById(TableIDvalue);
+                var tbody = table.getElementsByTagName("tbody")[0];
+                var rows = tbody.getElementsByTagName("tr");
+                var arrayOfRows = new Array();
+                type = type.toUpperCase();
+                dateformat = dateformat.toLowerCase();
+                for(var i=0, len=rows.length; i<len; i++) {
+                    arrayOfRows[i] = new Object;
+                    arrayOfRows[i].oldIndex = i;
+                    var celltext = rows[i].getElementsByTagName("td")[sortColumn].innerHTML.replace(/<[^>]*>/g,"");
+                    if( type=='D' ) { arrayOfRows[i].value = GetDateSortingKey(dateformat,celltext); }
+                    else {
+                        var re = type=="N" ? /[^\.\-\+\d]/g : /[^a-zA-Z0-9]/g;
+                        arrayOfRows[i].value = celltext.replace(re,"").substr(0,25).toLowerCase();
+                    }
+                }
+                if (sortColumn == TableLastSortedColumn) { arrayOfRows.reverse(); }
+                else {
+                    TableLastSortedColumn = sortColumn;
+                    switch(type) {
+                        case "N" : arrayOfRows.sort(CompareRowOfNumbers); break;
+                        case "D" : arrayOfRows.sort(CompareRowOfNumbers); break;
+                        default  : arrayOfRows.sort(CompareRowOfText);
+                    }
+                }
+                
+                var newTableBody = document.createElement("tbody");
+                for(var i=0, len=arrayOfRows.length; i<len; i++) {
+                    newTableBody.appendChild(rows[arrayOfRows[i].oldIndex].cloneNode(true));
+                }
+                table.replaceChild(newTableBody,tbody);
+                updateTicketArray();
+            } // function SortTable()
+
+            function CompareRowOfText(a,b) {
+                var aval = a.value;
+                var bval = b.value;
+                return( aval == bval ? 0 : (aval > bval ? 1 : -1) );
+            } // function CompareRowOfText()
+
+            function CompareRowOfNumbers(a,b) {
+                var aval = /\d/.test(a.value) ? parseFloat(a.value) : 0;
+                var bval = /\d/.test(b.value) ? parseFloat(b.value) : 0;
+                return( aval == bval ? 0 : (aval > bval ? 1 : -1) );
+            } // function CompareRowOfNumbers()
+
+            function GetDateSortingKey(format,text) {
+                if( format.length < 1 ) { return ""; }
+                format = format.toLowerCase();
+                text = text.toLowerCase();
+                text = text.replace(/^[^a-z0-9]*/,"",text);
+                text = text.replace(/[^a-z0-9]*$/,"",text);
+                if( text.length < 1 ) { return ""; }
+                text = text.replace(/[^a-z0-9]+/g,",",text);
+                var date = text.split(",");
+                if( date.length < 3 ) { return ""; }
+                var d=0, m=0, y=0;
+                for( var i=0; i<3; i++ ) {
+                    var ts = format.substr(i,1);
+                    if( ts == "d" ) { d = date[i]; }
+                    else if( ts == "m" ) { m = date[i]; }
+                    else if( ts == "y" ) { y = date[i]; }
+                }
+                if( d < 10 ) { d = "0" + d; }
+                if( /[a-z]/.test(m) ) {
+                    m = m.substr(0,3);
+                    switch(m) {
+                        case "jan" : m = 1; break;
+                        case "feb" : m = 2; break;
+                        case "mar" : m = 3; break;
+                        case "apr" : m = 4; break;
+                        case "may" : m = 5; break;
+                        case "jun" : m = 6; break;
+                        case "jul" : m = 7; break;
+                        case "aug" : m = 8; break;
+                        case "sep" : m = 9; break;
+                        case "oct" : m = 10; break;
+                        case "nov" : m = 11; break;
+                        case "dec" : m = 12; break;
+                        default    : m = 0;
+                        }
+                    }
+                if( m < 10 ) { m = "0" + m; }
+                y = parseInt(y);
+                if( y < 100 ) { y = parseInt(y) + 2000; }
+                return "" + String(y) + "" + String(m) + "" + String(d) + "";
+            } // function GetDateSortingKey()
+        </script>
+    </body>
+     <div id="ticketSelect">
+        <a id='info'>Assign 0 tickets to </a>
+        <select id='vzIdsInFooterVDSI'></select>
+        <a id='info'> OR </a>
+        <select id='vzIdsInFooterOnSHORE'></select>
+        <button id='makeAssingment' onclick="manSign();">GO!</button>
+    </div>
+</html>

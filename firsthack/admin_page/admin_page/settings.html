@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+        <link rel="stylesheet" type="text/css" href="../AdminPage/css/styles.css"/>
+        <link rel="stylesheet" type="text/css" href="../AdminPage/css/style.css"/>
+        <script src="../AdminPage/js/google-ajax.js"></script>
+        <title id='pageTitle'>ROC Tool</title>
+        <script src="../AdminPage/js/commons.js"></script>
+        <script src="../AdminPage/js/settings.js"></script>
+        <link rel="SHORTCUT ICON" href="../AdminPage/pictures/favicon.ico" type="image/x-icon" />
+    </head>
+    <body>
+        <table id='vzSearch'>
+            <tr>
+                <td><h1 id="title">VERIZON</h1></td>
+                <td></td><td></td><td></td><td id='label'>Ticket ID: </td>
+                <td style='min-width: 140px; max-width: 140px;'>
+                    <input id='search' type='text'></input>&nbsp;<button id='btn_search' onclick='lookInDB()'>Search</button>
+                </td>
+            </tr>
+        </table>
+        <div id="menu">
+            <ul id="menubar">
+                <li><a href='home.html'>Home</a></li>
+                <li id='add_user'>
+                    <a href="#" id="adminList">Admin</a>
+                    <ul id="linklist">
+                        <li><a href="summary.html">View Work Summary</a></li>
+                        <li><a href="viewUsers.html">View All Users</a></li>
+                        <li><a href="adduser.html">Add User</a></li>
+                        <li><a href="addClosureCodes.html">Add Closure Code</a></li>
+                        <li><a href="addRemoveQueues.html">Add/Remove Queues</a></li>
+                    </ul>
+                </li>
+                <li><a href="allTickets.html">View All Tickets</a></li>
+                <li><a href='settings.html'>Settings</a></li>
+                <li id="logout" onclick="signout();"><a>Logout</a></li>
+            </ul>
+        </div>
+        <div id="MainBody">
+            <div id='title'><b>Settings</b></br></div>
+            </br>
+            <table id='tbl_settings'>
+                <tr style='text-align: right; vertical-align: top;'>
+                    <td>
+                        Comment Signature:
+                    </td>
+                    <td>
+                        <textarea id='comment_signature' placeholder='Comment Signature' style="width: 481px; height: 82px;"></textarea>
+                    </td>
+                    <td>
+                        <button onclick='submitSignature()'>Submit</button>
+                    </td>
+                </tr>
+                <tr style='text-align: right; vertical-align: top;'>
+                    <td>
+                        Email:
+                    </td>
+                    <td>
+                        <textarea id='email' placeholder='Email' style="width: 481px; height: 82px;"></textarea>
+                    </td>
+                    <td>
+                        <button onclick='submitEmail()'>Submit</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
