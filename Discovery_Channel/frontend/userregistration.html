@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" >
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Service Registration Form</title>
+
+<link rel="stylesheet" href="myStory.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+<style type="text/css">
+    .formstyle{
+    	margin-left: 200px;
+		margin-top: 20px;
+    }
+	
+    .form-horizontal .control-label{
+        padding-top: 0px;
+	
+    }
+	.titlefeel{
+	margin-left: 150px;
+	margin-top: 50px;
+	font-size:40px;
+	}
+	
+	p{
+	margin-left: 150px;
+	margin-top: 20px;
+	font-size:17px;
+	}
+	.onlysubmit{
+	margin-left: 150px;
+	margin-top: 40px;
+	}
+	
+	
+</style>
+<style type="text/css">
+
+   
+
+  /* Fix alignment issue of label on extra small devices in Bootstrap 3.2 */
+
+    .form-horizontal .control-label{
+
+        padding-top: 0px;
+
+    }
+
+</style>
+
+</head>
+
+   <body>
+<div >
+		<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html">Discovery Channel</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">New User
+        <span class="caret"></span></a>
+         <ul class="dropdown-menu">
+          <li><a href="userregistration.html">Registration</a></li>
+          <li><a href="#">services</a></li>
+        </ul>
+      </li>
+      <li><a href="service_registration.html">Services Login</a></li> 
+      <li><a href="userregistration.html">Help</a></li> 
+    </ul>
+  </div>
+</nav>
+
+
+			<img src="userform.jpg" style="width:1000px;height:200px;margin-left: 120px;" alt="Awareess for cancer" />	
+
+      <div>
+
+         <h1 class="storyHeader titlefeel">This is my Story</h1>
+
+         <FORM METHOD="Get" ACTION="Profile.asp">
+
+            <p>Hello, My name is <INPUT TYPE="Text" ID="FirstName"  name=firstname placeholder="First Name" required/>  
+
+               and I was born on <INPUT TYPE="Date" name="bday" required/>.
+
+            </p>
+
+            <p>
+				
+               I am from <INPUT TYPE="Text"  name="location" placeholder="location" required> and am currently fighting 
+
+               <select name= "diseases" placeholder="Type of Disease">
+
+                  <option value="">Select Illness</option>
+
+                  <option value="HIV">HIV</option>
+
+                  <option value="Alcoholism">Alcoholism</option>
+
+                  <option value="Sickle Cell">Sickle Cell</option>
+
+                  <option value ="Multiple Scerosis">Multiple Scerosois</option>
+
+               </select>
+
+               . 
+
+            </p>
+
+            <p>
+
+               I am of 
+
+               <select name = "ethnicity" required>
+
+                  <option value="" disabled selected>Select your ethnicity</option>
+
+                  <option value="African American / Black">African American / Black</option>
+
+                  <option value="Hispanic/Latino">Hispanic/Latino</option>
+
+                  <option value="Middle Eastern">Middle Eastern</option>
+
+                  <option value ="Pacific Islander">Pacific Islander</option>
+
+                  <option value ="Native American / Alaskan">Native American / Alaskan</option>
+
+                  <option value ="Other">Other</option>
+
+               </select>
+
+               descent and I would be interested in participating in a faith based series 
+
+               <select name= "faithInterest" required>
+
+                  <option value = "" disabled selected> Interested in Faith Programs?</option>
+
+                  <option value="Yes, I am interested">Yes, I am interested</option>
+
+                  <option value="No, I am not interested">No, I am not interested</option>
+
+               </select>
+
+            </p>
+
+            <INPUT TYPE="Submit" class="onlysubmit btn btn-primary " VALUE="Submit my Story"> 
+
+         </FORM>
+
+      </div>
+
+      <script src="js/jquery-1.11.3.min.js"></script>
+
+      <script src="js/bootstrap.min.js"></script>
+
+   </body>
+
+</html>
+
+
+
+
+
