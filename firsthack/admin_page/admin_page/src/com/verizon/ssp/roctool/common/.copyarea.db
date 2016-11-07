@@ -1,7 +1,0 @@
-ClearCase CopyAreaDB|4
-vob\ssp\Services\DataServices\ROCTool\src\com\verizon\ssp\roctool\common
-2
-3
-e:Constants.java|1|14c9ec079df|8f4|4c76c77e|b31e7105d3d011e48bbd0001838c2019|0
-a:Utils.java|1|14cc2e7c217|1636|b203cd46|ad5382dfe20311e496a10001838c2019|0
-10:TextMasking.java|1|14c9ec079a9|fd3|2c2ddc27|b06e70fdd3d011e48bbd0001838c2019|0

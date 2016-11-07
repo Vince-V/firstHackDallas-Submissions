@@ -1,7 +1,0 @@
-ClearCase CopyAreaDB|4
-vob\ssp\Services\DataServices\ROCTool\src\com\verizon\ssp\roctool\daemon
-2
-3
-16:GrabFromRocDaemon.java|1|14cc2e7c559|bdb|c57bc39a|e42382ebe20311e496a10001838c2019|0
-e:FTPDaemon.java|1|14cc2e7c4fb|c0a|3140cd64|ebf382f3e20311e496a10001838c2019|0
-15:AssignmentDaemon.java|1|14cc2e7c450|b30|e1ed90c3|7d638297e20111e496a10001838c2019|0

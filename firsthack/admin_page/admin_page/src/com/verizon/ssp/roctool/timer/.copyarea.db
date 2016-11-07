@@ -1,7 +1,0 @@
-ClearCase CopyAreaDB|4
-vob\ssp\Services\DataServices\ROCTool\src\com\verizon\ssp\roctool\timer
-2
-3
-d:TimeImpl.java|1|14c9ec07f21|4ca|b62c96f1|c067dab9cba011e48edf0001838c2019|0
-10:FTPTimeImpl.java|1|14c9ec07f58|4ca|93c9716|145a5d19d1e211e494170001838c2019|0
-a:iTime.java|1|14b9d5a61c9|e7|a74c4c5b|9b402e8eb70311e489c80001838c2019|0

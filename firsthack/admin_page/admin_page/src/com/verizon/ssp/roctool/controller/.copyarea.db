@@ -1,7 +1,0 @@
-ClearCase CopyAreaDB|4
-vob\ssp\Services\DataServices\ROCTool\src\com\verizon\ssp\roctool\controller
-2
-3
-f:Controller.java|1|14ce2f8a583|505c|ed974ea|8934de5ce7ac11e4911d0001838c2019|0
-1f:AssignmentDaemonController.java|1|14cc2e7c2e3|45b7|93bd767c|6d738287e20111e496a10001838c2019|0
-1b:ClosureCodesController.java|1|14ce2f8a537|96e|3eb21114|f6441390e7bb11e491d10001838c2019|0
